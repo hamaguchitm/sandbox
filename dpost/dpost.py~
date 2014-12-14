@@ -1,0 +1,25 @@
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+import traceback
+
+def make_list(n, m):
+    # nをm分割した長さmのリストの配列を返す
+    if m == 1:
+        return [[n]]
+    else:
+        for i in range(n):
+            sub_lists = make_list(n - i, m - 1)
+
+            for list in sub_lists:
+                list.append(i)
+
+            lists += sub_lists
+
+        return lists
+    
+
+if __name__ == "__main__":
+
+    print make_list(2,2)
